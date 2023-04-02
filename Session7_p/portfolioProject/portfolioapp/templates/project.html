@@ -4,9 +4,57 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>B_Project</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'project.css' %}?after" />
+
 </head>
 <body>
-    <h2>와라랄라</h2>
+  <div id="page">
+    <header>
+      <div id="logo">
+        <img src="/static/img/fullmoon.png" height="150px" />
+      </div>
+
+      <div id="top_name">
+        BOREUM LEE
+      </div>
+
+      <nav>
+        <ul>
+          <li><a href="#">LIFE</a></li>
+          <li>|</li>
+          <li><a href="{%url 'project'%}" id="project">PROJECT</a></li>
+          <li>|</li>
+          <li><a href="#">ABOUT ME</a></li>
+          <li>|</li>
+          <li><a href="#">BLOG</a></li>
+          <li>|</li>
+          <li><a href="#">💌</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <article id="content">
+      <section id="main">
+        <!-- 메인으로 띄우고 싶은 것이 있다면.. -->
+      </section>
+      <section class="album">
+        <img src="/static/img/project/instagram.png">
+        <img src="/static/img/project/toss.png">
+      </section>
+      <section>
+        <ul id="banner">
+          <!-- 배너로 띄울 것이 있다면... -->
+          <!-- <li><a href="#"><img src="./imgs_company/banner1.png" alt="banner1"></a></li> -->
+          <!-- <li><a href="#"><img src="./imgs_company/banner2.png" alt="banner2"></a></li> -->
+        </ul>
+      </section>
+    </article>
+
+    <footer>
+      <!-- <img src="./imgs_company/address.png" alt="address"> -->
+    </footer>
+  </div>
 </body>
 </html>
