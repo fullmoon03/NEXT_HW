@@ -13,11 +13,15 @@ def no_space(text):
     return text2
 
 #디버깅 모드
-chrome_options = Options()
-chrome_options.add_experimental_option("debuggerAddress", "127.0.0.1:9222")
+# chrome_options = Options()
+# chrome_options.add_experimental_option("debuggerAddress", "127.0.0.1:9222")
 
 chrome_driver = './chromedriver'
-driver = webdriver.Chrome(chrome_driver, options= chrome_options)
+driver = webdriver.Chrome(chrome_driver)
+
+# 원래 이렇게 하면 됨!!
+# 근데 폴더에 chromedriver파일 가져다놓기
+# 글구 그냥 터미널에 python movie.py 로 실행
 
 #실행할 웹페이지 불러오기
 driver.get("https://movie.naver.com/")

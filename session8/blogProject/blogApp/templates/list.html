@@ -5,14 +5,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Article List</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'list.css' %}" />
   </head>
   <body>
-    <h2>글 전체 목록</h2>
-    <ul>
-      {% for article in articles %}
-      <li><a href="{% url 'detail' article.a %}">{{ article }}</a></li>
+    <h1 class="title">About my life 🫧</h1>
+    <div class="container">
+      {% for category,num in list %}
+      <div class="category">
+        <h3 class="category_name"><a href="{% url 'category' category %}">{{ category }} ({{ num }})</a></h3>
+        {% if category == "HOBBY"%}
+        <div style="text-align: center"><img src="/static/img/hobby.jpg"/></div>
+
+        {% elif category == 'FOOD' %}
+        <div style="text-align: center"><img src="/static/img/food.jpg"/></div>
+
+        {% elif category == 'PROGRAMMING' %}
+        <div style="text-align: center"><img src="/static/img/program.jpg"/></div>
+
+        {% endif %}
+      </div>
       {% endfor %}
-    </ul>
-    <a href="{% url 'new' %}">글 쓰러 가기</a>
+    </div>
+
+    
   </body>
 </html>

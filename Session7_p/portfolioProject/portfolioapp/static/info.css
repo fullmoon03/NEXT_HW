@@ -5,6 +5,7 @@ a{text-decoration: none;} /* 링크에 밑줄 같은거 제거*/
 #page{width: 100vw; margin: 0px auto;}
 
 body{
+    font-family: serif;
     width: 100%;
     background-color: black;
 }

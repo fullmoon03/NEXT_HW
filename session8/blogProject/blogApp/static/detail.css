@@ -1,0 +1,49 @@
+*{margin: 0px; padding: 0px;}
+ul{list-style: none;} /* 리스트 앞에 . 같은거 제거*/
+a{color: black;} /* 링크에 밑줄 같은거 제거*/
+
+body{
+    font-family: serif;
+    /* background-color: black; */
+    padding: 30px;
+    width: 1350px;
+}
+
+.title {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+h3 {
+    font-style: italic;
+}
+
+
+.container{
+    position: relative;
+    padding: 40px;
+    min-height: 500px;
+    border-style: outset;
+    border-width: 10px;
+    line-height: 300%;
+
+}
+
+#date {
+    text-align: right;
+    padding-right: 280px;
+}
+
+.content {
+    width: 1000px;
+    min-height: 250px;
+    padding: 15px;
+    border-style: dashed;
+    border-color: darkgrey;
+
+}
+
+#home {
+    position: absolute;
+    bottom: 30px;
+}

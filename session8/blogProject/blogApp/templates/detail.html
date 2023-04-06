@@ -5,12 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Article</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'detail.css' %}?after" />
 </head>
 <body>
-    <h2>{{ article.title }}</h2>
-    <div>
-        {{ article.content }}
+    <div class="container">
+        <h3><a href="{% url 'category' article.category %}">{{ article.category }}</a></h3>
+        <h2 class="title">{{ article.title }}</h2>
+        <h5 id="date">{{ article.create_date }}</h5>
+        <div class="content">
+            {{ article.content }}
+        </div>
+        <span id = "home">🏠 <a href="{% url 'list' %}">홈으로</a></span>
+        
     </div>
-    <a href="{% url 'list' %}">목록으로</a>
   </body>
 </html>

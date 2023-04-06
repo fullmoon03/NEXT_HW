@@ -1,0 +1,42 @@
+*{margin: 0px; padding: 0px;}
+ul{list-style: none;} /* 리스트 앞에 . 같은거 제거*/
+a{color: black;} /* 링크에 밑줄 같은거 제거*/
+
+body{
+    font-family: serif;
+    /* background-color: black; */
+    padding: 30px;
+    width: 1350px;
+}
+
+/* #page{width: auto; margin: 0px auto;} */
+
+.title {
+    margin-bottom: 20px;
+}
+
+.category_name {
+    margin-bottom: 15px;
+    font-style: italic;
+}
+
+.container{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+
+}
+
+.category{
+    width: 30%;
+    padding: 15px;
+    /* height: 510px; */
+    /* border: 3px solid black; */
+    border-style: outset;
+    border-width: 10px;
+}
+
+.category img{
+    height: 450px;
+    margin:15px;
+}
