@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List 😍</title>
+    {% load static %}
+    <!-- font awesome 코드 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" type="text/css" href="{% static 'home.css' %}?after">
+</head>
+<body>
+    <div class="home">
+        <h1>To-Do List</h1>
+
+        {% for todo in list %}
+        <div class="todo">
+            <h2>
+                <a href="{% url 'detail' todo.pk %}">{{ todo }}</a>
+                <span>{{ todo.content }}</span>
+            </h2>
+
+            {% if todo.deadline > 0 %}
+            <div><p class="d_day faraway">D-{{todo.deadline}}</p></div>
+            {% elif todo.deadline == 0 %}
+            <div><p class="d_day">D-day</p></div>
+            {% else %}
+            <div><p class="d_day outdated">D+{% widthratio todo.deadline 1 -1 %}</p></div>
+            {% endif %}
+
+        </div>
+        {% endfor %}
+        <div class="todo new">
+            <h2><a href="{% url 'new' %}"><i class="fa-solid fa-circle-plus"></i>&nbsp;할일 new</a></h2>
+        </div>
+
+    </div>
+    
+    
+</body>
+</html>

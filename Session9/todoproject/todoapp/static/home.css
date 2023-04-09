@@ -1,0 +1,94 @@
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+  }
+  /* body */
+  body{
+    background: #FEF2F4;
+    font-family: sans-serif;
+    /* border-top: 5px solid #aa8e8d; */
+  }
+  /* title */
+  h1{
+    color: #aa8e8d;
+    text-align: center;
+    font-size: 32px;
+    font-weight: 900;
+  }
+  /* tasks */
+  .home{
+    width: 300px;
+    height: 1000px;
+    position: absolute;
+    top: 10%;
+    left: 0px; 
+    right: 0px;
+    margin: 0px auto;
+  }
+
+  .todo {
+    background: #FFABAB;
+    height: 69px;
+    width: 100%;
+    display: flex;
+    border-bottom: 1px solid #c99ba5;
+    color: #fff;
+    text-transform: capitalize;
+    font-weight: 900;
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-indent: 20px;
+    cursor: pointer;
+    transition: all 0.7s ease;
+    position: relative;
+    padding: 5px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+  }
+
+  .todo div {
+    width: 20%;
+    display: flex;
+    align-items: center;
+    
+  }
+
+  .d_day {
+    margin:0;
+    padding: 0;
+    font-size: 18px;
+    text-indent: 0px;
+  }
+
+  .outdated {
+    color: lightgrey;
+  }
+
+  .faraway {
+    color: grey;
+  }
+
+  .todo h2 span{
+    display: block;
+    font-size: 12px;
+    text-transform: capitalize;
+    font-weight: normal;
+    color: #D14D72;
+  }
+
+  .todo h2 {
+    width: 80%;
+  }
+
+  .new h2 {
+    margin-top: 18px;
+  }

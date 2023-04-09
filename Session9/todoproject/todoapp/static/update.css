@@ -1,0 +1,59 @@
+a {
+    text-decoration: none;
+    color: white;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 18px;
+    color: 393646;
+}
+  /* body */
+body{
+    background: #FEF2F4;
+    font-family: sans-serif;
+    /* border-top: 5px solid #aa8e8d; */
+}
+
+  /* tasks */
+.update{
+    width: 300px;
+    height: 500px;
+    position: absolute;
+    top: 10%;
+    left: 0px; 
+    right: 0px;
+    margin: 0px auto;
+    padding: 0 25px;
+    /* background-color: #FFBFA9; */
+    background-color: #FFDCA9;
+}
+
+input, textarea, button {
+    border: 0;
+    border-radius: 10px;
+    margin: 3px;
+    margin-top: 10px;
+    padding: 3px 10px;
+    min-height: 30px;
+}
+
+button {
+    background-color: #FFF3E2;
+}
+
+button i {
+    color: #6D5D6E;
+}
+
+textarea {
+    max-width: 270px;
+    max-height: 175px;
+    padding: 10px 10px;
+}
+
+.box {
+    margin: 20px 0;
+}
