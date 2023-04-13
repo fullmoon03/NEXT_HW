@@ -16,6 +16,14 @@ footer {
 	bottom: 0px;
     padding-left: 30px;
 	position: absolute;
+    font-size: 10px;
+}
+
+.footer-border {
+    border-left: 8px solid lightgray;
+    padding-left: 20px;
+    position: relative;
+    height: 40px;
 }
 
 section {
