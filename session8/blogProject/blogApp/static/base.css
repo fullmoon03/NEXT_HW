@@ -1,0 +1,23 @@
+*{margin: 0px; padding: 0px;}
+ul{list-style: none;} /* 리스트 앞에 . 같은거 제거*/
+a{color: black;} /* 링크에 밑줄 같은거 제거*/
+
+body{
+    font-family: serif;
+    padding: 30px;
+    width: 1350px;
+    position: relative;
+    
+}
+
+footer {
+	width: 100%;
+	height: 80px; /* 내용물에 따라 알맞는 값 설정 */
+	bottom: 0px;
+    padding-left: 30px;
+	position: absolute;
+}
+
+section {
+    padding-bottom: 80px;
+}
