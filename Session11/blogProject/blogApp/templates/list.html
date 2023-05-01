@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block css/title %}
+<title>Article List</title>
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'list.css' %}" />
+{% endblock css/title %}
+
+{% block section %}
+<h1 class="title">About my life 🫧</h1>
+<div class="container">
+  {% for category,num in list %}
+  <div class="category">
+    <h3 class="category_name"><a href="{% url 'category' category %}">{{ category }} ({{ num }})</a></h3>
+    {% if category == "HOBBY"%}
+    <div style="text-align: center"><img src="/static/img/hobby.jpg"/></div>
+
+    {% elif category == 'FOOD' %}
+    <div style="text-align: center"><img src="/static/img/food.jpg"/></div>
+
+    {% elif category == 'PROGRAMMING' %}
+    <div style="text-align: center"><img src="/static/img/program.jpg"/></div>
+
+    {% endif %}
+  </div>
+  {% endfor %}
+</div>
+{% endblock section %}

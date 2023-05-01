@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load account socialaccount %}
+    {% providers_media_js %}
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'base.css' %}">
+    <!-- font awesome 코드 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    {% block css/title %}
+    {% endblock css/title %}
+
+</head>
+<body>
+    <nav id="navbar">
+        <ul class="navbar_menu">
+            <li class="navbar_menu_item">
+                <a href="{% url 'new' %}">New</a>
+            </li>
+            <li class="navbar_menu_item">
+                <a href="{% url 'home' %}">Home</a>
+            </li>
+            {% if user.is_authenticated %}
+            <span class="navbar_menu_item">Hi, {{user.username}}</span>
+            <li class="navbar_menu_item">
+                <a href="{% url 'logout' %}">로그아웃</a>
+            </li>
+            {% else %}
+            <li class="navbar_menu_item">
+                <a href="{% url 'login' %}">로그인</a>
+            </li>
+            <form method="POST" action="{% provider_login_url 'kakao' %}">
+                {% csrf_token %} {{ form.as_p }}
+                {% if redirect_field_value %}
+                <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
+                {% endif %}
+                <button class="navbar_menu_item primaryAction" type="submit"><img src="/static/img/kakao.png"/></button>
+            </form>
+            <form method="POST" action="{% provider_login_url 'google' %}">
+                {% csrf_token %} {{ form.as_p }}
+                {% if redirect_field_value %}
+                <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
+                {% endif %}
+                <button class="navbar_menu_item primaryAction" type="submit"><img src="/static/img/google.png"/></button>
+            </form>
+            <!-- <li class="navbar_menu_item">
+                <a href="{% provider_login_url 'kakao' %}">카카오 로그인</a>
+            </li>
+            <li class="navbar_menu_item">
+                <a href="{% provider_login_url 'google' %}">구글 로그인</a>
+            </li> -->
+            <li class="navbar_menu_item">
+                <a href="{% url 'signup' %}">회원가입</a>
+            </li>
+            {% endif %}
+        </ul>
+    </nav>
+    <section>
+        {% block section %}
+        {% endblock section %}
+    </section>
+    <footer>
+        <div class="footer-border">
+            <p>
+                <span>저자 : 보르미</span><br/>
+                <span>이메일 : borem03@gmail.com</span><br/>
+                <span>Copyright 2023. boreumiii. All Rights Reserved.</span>
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>
