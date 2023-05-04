@@ -1,0 +1,29 @@
+.title {
+    margin-bottom: 20px;
+}
+
+.category_name {
+    margin-bottom: 15px;
+    font-style: italic;
+}
+
+.container{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+
+}
+
+.category{
+    width: 30%;
+    padding: 15px;
+    /* height: 510px; */
+    /* border: 3px solid black; */
+    border-style: outset;
+    border-width: 10px;
+}
+
+.category img{
+    height: 450px;
+    margin:15px;
+}

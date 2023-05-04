@@ -1,0 +1,16 @@
+
+.title {
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+
+.container{
+    position: relative;
+    padding: 40px;
+    min-height: 400px;
+    border-style: outset;
+    border-width: 10px;
+    line-height: 200%;
+
+}

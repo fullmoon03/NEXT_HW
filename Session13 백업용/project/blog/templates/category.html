@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block css/title %}
+<title>Category</title>
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'category.css' %}" />
+{% endblock css/title %}
+
+
+{% block section %}
+<h1 class="title">❦ {{ category_name }}</h1>
+<div class="container">
+  <ul>
+    {% for article in articles %}
+    <li>🐹 <a href="{% url 'detail' article.id %}">{{ article }}</a></li>
+    {% endfor %}
+  </ul>
+  <span id="new_post">✍🏻 <a href="{% url 'new' %}">글 쓰러 가기</a></span>
+  <span id="home">🏠 <a href="{% url 'list' %}">홈으로</a></span>
+</div>
+{% endblock section %}

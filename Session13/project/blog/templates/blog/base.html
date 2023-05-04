@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'base.css' %}">
+    <!-- font awesome 코드 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    {% block css/title %}
+    {% endblock css/title %}
+
+</head>
+<body>
+    <nav id="navbar">
+        <ul class="navbar_menu">
+            <li class="navbar_menu_item">
+                <a href="{% url 'blog:new' %}">New</a>
+            </li>
+            <li class="navbar_menu_item">
+                <a href="{% url 'blog:home' %}">Home</a>
+            </li>
+            {% if user.is_authenticated %}
+            <span class="navbar_menu_item">Hi, <a href="{% url 'accounts:home' %}" id="username">{{user.username}}</a> 🌝</span>
+            <li class="navbar_menu_item">
+                <a href="{% url 'logout' %}">로그아웃</a>
+            </li>
+            {% else %}
+            <li class="navbar_menu_item">
+                <a href="{% url 'login' %}">로그인</a>
+            </li>
+            
+            <li class="navbar_menu_item">
+                <a href="{% url 'signup' %}">회원가입</a>
+            </li>
+            {% endif %}
+        </ul>
+    </nav>
+    <section>
+        {% block section %}
+        {% endblock section %}
+    </section>
+    <footer>
+        <div class="footer-border">
+            <p>
+                <span>저자 : 보르미</span><br/>
+                <span>이메일 : borem03@gmail.com</span><br/>
+                <span>Copyright 2023. boreumiii. All Rights Reserved.</span>
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>

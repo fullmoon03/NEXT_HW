@@ -1,0 +1,88 @@
+*{margin: 0px; padding: 0px;}
+ul{list-style: none;} /* 리스트 앞에 . 같은거 제거*/
+a{color: black;} /* 링크에 밑줄 같은거 제거*/
+
+
+
+body{
+    font-family: serif;
+    padding: 30px;
+    width: 1350px;
+    position: relative;
+    
+}
+
+#navbar {
+
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    /* transtion 적용 */
+    /* transition: all 300ms ease-in-out; */
+    /* z-index의 default는 0 */
+    /* z-index: 1; */
+    /* color: #898989; */
+} 
+
+/* .navbar_logo {
+    display: flex;
+    align-items: center;
+    padding: 8px 16px;
+    font-size: 24px;
+}
+
+.navbar_logo img {
+    width: 50px;
+    height: 50px;
+    margin: 8px 16px;
+} */
+
+/* navbar-menu */
+.navbar_menu {
+    display: flex;
+    align-items: center;
+}
+
+.navbar_menu .navbar_menu_item {
+    margin: 0 4px;
+    /* cursor: pointer;
+    color: #898989; */
+}
+
+.navbar_menu .navbar_menu_item a {
+    padding: 8px 16px;
+}
+
+.primaryAction {
+    border: 0px;
+    height: 30px;
+    border-radius: 3px;
+    box-shadow: 1px 1px 1px 1px gray;
+
+}
+
+.primaryAction img{
+    height: 100%;
+}
+  
+
+footer {
+	width: 100%;
+	height: 80px; /* 내용물에 따라 알맞는 값 설정 */
+	bottom: 0px;
+    padding-left: 30px;
+	position: absolute;
+    font-size: 10px;
+}
+
+.footer-border {
+    border-left: 8px solid lightgray;
+    padding-left: 20px;
+    position: relative;
+    height: 40px;
+}
+
+section {
+    padding-bottom: 80px;
+}

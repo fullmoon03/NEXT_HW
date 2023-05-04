@@ -1,0 +1,60 @@
+{% extends 'blog/base.html' %}
+
+{% block css/title %}
+<title>Article</title>
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'detail.css'%}" />
+{% endblock css/title %}
+
+{% block section %}
+<div class="container">
+    <h3><a href="{% url 'blog:category' article.category %}">{{ article.category }}</a></h3>
+    <h2 class="title">{{ article.title }}</h2>
+    <h5>written by, {{ user.username }} </h5>
+    <h5 class="right_side">{{ article.create_date }}</h5>
+    <div class="content">
+        {{ article.content }}
+    </div>
+    {% if user.is_authenticated and user.pk == article.author.pk %}
+    <div class="right_side">
+    <span><a href="{% url 'blog:update' article.id %}">수정</a></span>
+    <span class="delete"><a href="{% url 'blog:delete' article.id %}">삭제</a></span>
+    </div>
+    {% endif %}
+    
+    {% for comment in article.comments.all %}
+    {% if comment.parent_comment == None %}
+    <h4>
+        <i class="fa-regular fa-comment-dots"></i>
+        {{ user.username }} : {{ comment }}
+        {% if user.pk == comment.author.pk and user.is_authenticated %}
+        <a href="{% url 'blog:delete-comment' comment.article.id comment.id %}">삭제</a>
+        {% endif %}
+    </h4>
+    {% for recomment in comment.recomments.all %}
+    <h4> &nbsp;
+        <i class="fa-solid fa-reply fa-flip-both"></i>
+        {{ user.username }} : {{ recomment }}
+        {% if user.is_authenticated and user.pk == recomment.author.pk %}
+        <a href="{% url 'blog:delete-comment' comment.article.id recomment.id %}">삭제</a>
+        {% endif %}
+    </h4>
+    {% endfor %}
+        <form class="new_reply" action="{% url 'blog:reply-comment' comment.id %}" method="POST">
+            {% csrf_token %}
+            <i class="fa-solid fa-plus"></i>
+            <input type="text" name="content" placeholder="답글을 입력해주세요" />
+            <button type="submit">작성</button>
+        </form>
+    {% endif %}
+    {% endfor %}
+    <form id="new_comment" action="" method="POST">
+        {% csrf_token %}
+        <i class="fa-solid fa-plus"></i>
+        <input type="text" name="content" placeholder="새 댓글을 입력해주세요" />
+        <button type="submit">작성</button>
+    </form>
+    <span id = "home">🏠 <a href="{% url 'blog:list' %}">홈으로</a></span>
+    
+</div>
+{% endblock section %}

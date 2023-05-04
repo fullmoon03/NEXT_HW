@@ -1,0 +1,55 @@
+.title {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+h3 {
+    font-style: italic;
+}
+
+
+.container{
+    position: relative;
+    padding: 40px;
+    padding-bottom: 100px;
+    min-height: 500px;
+    border-style: outset;
+    border-width: 10px;
+    line-height: 300%;
+
+}
+
+
+
+.right_side {
+    text-align: right;
+    padding-right: 280px;
+}
+
+
+.content {
+    width: 1000px;
+    min-height: 250px;
+    padding: 15px;
+    border-style: dashed;
+    border-color: darkgrey;
+
+}
+
+#home {
+    position: absolute;
+    bottom: 30px;
+}
+
+.comment_line {
+    line-height:50%
+}
+
+#new_comment {
+    padding-top: 10px;
+}
+
+.new_reply {
+    text-indent: 10px;
+}
+
