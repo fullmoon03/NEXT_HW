@@ -48,6 +48,7 @@ def logout(request):
 def home(request):
     return redirect('blog:list')
 
+
 @login_required(login_url="/blog/registration/login/")
 def new(request):
     if request.method == 'POST':
