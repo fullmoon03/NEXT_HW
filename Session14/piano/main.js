@@ -1,4 +1,4 @@
-play = (e) => {
+const play = (e) => {
   console.log(e);
   // 1. audio 변수를 html에서 select해주세요. audio변수는 누르는 키보드에 해당하는 keycode를 가지고 있는 음악파일(audio 태그)입니다.
   const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
@@ -17,7 +17,7 @@ play = (e) => {
   }
 };
 
-pause = (e) => {
+const pause = (e) => {
   // 1. audio 변수를 html에서 select해주세요. audio변수는 누르는 키보드에 해당하는 keycode를 가지고 있는 음악파일(audio 태그)입니다.
   const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
 
